@@ -16,14 +16,17 @@ export const corsConfig: CorsOptions = {
     } */
 
     origin: (origin, callback) => {
-        if (!origin) return callback(null, true)
+    if (!origin) return callback(null, true);
 
-        if (origin.includes('vercel.app') || origin === 'http:/ localhost:5174') {
-            callback(null, true)
-        } else {
-            callback(new Error('CORS bloqueado'))
-        }
-    },
+    if (
+      origin.includes('vercel.app') ||
+      origin === 'http://localhost:5174'
+    ) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS bloqueado'));
+    }
+  },
   credentials: true
 }
 
